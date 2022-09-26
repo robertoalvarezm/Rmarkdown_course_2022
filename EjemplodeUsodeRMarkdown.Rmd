@@ -18,6 +18,8 @@ output:
     toc: yes
 bibliography: biblio.bib
 #csl: nature.csl
+
+
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -25,6 +27,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 # El texto (en Rmarkdown)
+
+Este documento es una modificaicón del curso de **RMarkdown** de Leticia Vega y Alejandro Ponce Mendoza. [Curso RMarkdown](https://github.com/ComunidadBioInfo/minicurso_mar_2021/blob/main/Presentation1.pdf)  
+Para una mejor y más completa referencia consulten [RMarkdown: The definitive guide](https://bookdown.org/yihui/rmarkdown/)
+
 
 La parte del texto suele ser la parte principal de un documento. **En un archivo con extensión Rmd, todo lo que no sea encabezado o código, se interpretará como texto y se mostrará como tal**.
 
