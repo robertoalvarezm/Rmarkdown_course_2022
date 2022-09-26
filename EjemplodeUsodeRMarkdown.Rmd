@@ -17,6 +17,7 @@ output:
   word_document:
     toc: yes
 bibliography: biblio.bib
+#csl: nature.csl
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -29,7 +30,7 @@ La parte del texto suele ser la parte principal de un documento. **En un archivo
 
 Bajo esta interpretación podríamos terminar aquí la sección de cómo escribir texto en un archivo .Rmd. Sin embargo, **en un texto generalmente queremos darle un cierto formato, es decir, resaltar algunas palabras, ponerlas en cursivas, además de colocar títulos y subtítulos entre otras cosas**. Todo esto lo podremos realizar con Markdown. ***Markdown*** **es un lenguaje de marcado que permite darle formato a un texto** de manera relativamente sencilla.
 
-Voy a citar el libro @hastings2012encyclopedia y  @mclean2007theoretical
+
 
 ## Sintaxis de Markdown
 
@@ -420,11 +421,25 @@ Inferring the Chance of a Critical Transition}}, year = {2015}
 Usualamente dicho archivo, de texto, tiene extensión `.bib`
 
 
-A partir de eso podemos citar en cualquier parte del texto con las etiquetas que provee el documento con extensión *.bib*
+A partir de eso podemos citar en cualquier parte del texto con las etiquetas que provee el documento con extensión *.bib*. Es decir ``@ + etiqueta`
 
 
 
+Voy a citar por ejemplos los libros  @hastings2012encyclopedia; @mclean2007theoretical
+Además el paper @Dakos2015
 
+Se puede cambiar la forma de citar con los estilos d csl
+
+Por ejemplo, si queremos citar estilo **Nature**
+descragamos el estilo y lo modificamos en el YAML
+
+```{r}
+download.file("https://www.zotero.org/styles/nature?source=1", destfile = "nature.csl")
+```
+
+Otro sitio para descargar los archivos extensión *csl* están en el siguiente repositorio:
+
+[Github con csl](https://github.com/citation-style-language/styles)
 
 ### Notas de pie de página
 
@@ -454,11 +469,6 @@ Se verá:
 
 Esta forma de insertar enlaces es similar a la que vimos en la sección [Insertar hipervínculos e imágenes]
 
-### Usar emojis en el texto
-
-¡Vamos a acampar! emo::ji("face")
-
-¡Esto es muy divertido! emo::ji("joy")
 
 ### Insertar tablas desde Markdown
 
