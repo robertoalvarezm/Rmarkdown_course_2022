@@ -56,7 +56,7 @@ Los títulos se producen con un número determinado de veces el símbolo **#**, 
  <h5>Esto es un encabezado nivel 5 escrito en html</h5>
 \###### Esto es un título de nivel 6
 
-######Esto es un título de nivel 6 {-}
+###### Esto es un título de nivel 6 {-}
 
 ### Párrafos
 
@@ -546,7 +546,7 @@ options(tinytex.verbose = TRUE)
 ```
 
 ```{r, out.width='70%', fig.align='center'}
-# knitr::include_graphics("picture/Figure2.png")
+knitr::include_graphics("picture/Figure2.png")
 ```
 
 y abrirá un espacio entre llaves de la siguiente forma:  
@@ -569,7 +569,7 @@ En la Cheat Sheet de rmarkdown esta la sección de **Embed code with knitr synta
 
 ```{r, out.width='100%', fig.align='center', echo=FALSE}
 
-# knitr::include_graphics("picture/Figure3.png")
+knitr::include_graphics("picture/Figure3.png")
 ```
 
 
