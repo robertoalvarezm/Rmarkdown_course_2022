@@ -18,7 +18,7 @@ output:
     toc: yes
 bibliography: biblio.bib
 #csl: nature.csl
-
+runtime: shiny
 
 ---
 ```{r setup, include=FALSE}
