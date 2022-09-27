@@ -1,0 +1,622 @@
+---
+title: "Temas para Rmarkdown"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "`r format(Sys.time(), '%B %d , %Y')`"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    toc: yes
+---
+
+# Tema preestablecido
+
+Cuando usamos Rmarkdown y creamos el archivo .html, este tendrá un tema preestablecido.
+
+![01](ejemplos/trmd1.png)
+<br>
+<br>
+
+# Temas preliminares
+
+Sin embargo, podemos ir cambiando la visualización del tema en el archivo .html.
+<br>
+<br>
+Esto lo podemos hacer al establecer el tema en el material preliminar YAML. 
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: html_document
+---
+
+```
+<br>
+<br>
+En esta parte, debemos seleccionar el tema del paquete predeterminado que deseemos. Estos inclyen a: 
+
+## cerulean
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![02](ejemplos/trmd2.png)
+<br>
+<br>
+
+## cosmo
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![03](ejemplos/trmd3.png)
+<br>
+<br>
+
+## flatly
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![04](ejemplos/trmd4.png)
+<br>
+<br>
+
+## journal
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: journal
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![05](ejemplos/trmd5.png)
+<br>
+<br>
+
+## lumen
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: lumen
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![06](ejemplos/trmd6.png)
+<br>
+<br>
+
+## paper
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: paper
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![07](ejemplos/trmd7.png)
+<br>
+<br>
+
+## readable
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: readable
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![08](ejemplos/trmd8.png)
+<br>
+<br>
+
+## sandstone
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: sandstone
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![09](ejemplos/trmd9.png)
+<br>
+<br>
+
+## simplex
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: simplex
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![10](ejemplos/trmd10.png)
+<br>
+<br>
+
+## spacelab
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![11](ejemplos/trmd11.png)
+<br>
+<br>
+
+## united
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![12](ejemplos/trmd12.png)
+<br>
+<br>
+
+## yeti
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output:
+  html_document:
+    theme: yeti
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![13](ejemplos/trmd13.png)
+<br>
+<br>
+
+# Otros colores
+
+Si quieres que tu Rmarkdown sea más personalizado, tenga más estilo o un mejor diseño, puedes aplicar otros temas que vienen incluidos en algunos paquetes. Para ello, debes tener instalado el paquete del cual quieres aplicar el tema. 
+
+## ipsum
+
+El paquete para este tema es *hrbrthemes*
+
+```
+install.packages("hrbrthemes")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  hrbrthemes::ipsum:
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+```
+
+![14](ejemplos/trmd14.png)
+<br>
+<br>
+
+## architect
+
+El paquete para este tema es *prettydoc*
+
+```
+install.packages("prettydoc")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  prettydoc::html_pretty:
+    theme: architect
+    toc: yes
+---
+```
+
+![15](ejemplos/trmd15.png)
+<br>
+<br>
+
+## cayman
+
+El paquete para este tema es *prettydoc*
+
+```
+install.packages("prettydoc")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    toc: yes
+---
+```
+
+![16](ejemplos/trmd16.png)
+<br>
+<br>
+
+## hpstr
+
+
+El paquete para este tema es *prettydoc*
+
+```
+install.packages("prettydoc")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  prettydoc::html_pretty:
+    theme: hpstr
+    toc: yes
+---
+```
+
+![17](ejemplos/trmd17.png)
+<br>
+<br>
+
+## leonids
+
+
+El paquete para este tema es *prettydoc*
+
+```
+install.packages("prettydoc")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    toc: yes
+---
+```
+
+![18](ejemplos/trmd18.png)
+<br>
+<br>
+
+## tactile
+
+
+El paquete para este tema es *prettydoc*
+
+```
+install.packages("prettydoc")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: 
+  prettydoc::html_pretty:
+    theme: tactile
+    toc: yes
+---
+```
+
+![19](ejemplos/trmd19.png)
+<br>
+<br>
+
+## html_clean
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::html_clean 
+---
+```
+
+![20](ejemplos/trmd20.png)
+<br>
+<br>
+
+## html_docco
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::html_docco 
+---
+```
+
+![21](ejemplos/trmd21.png)
+<br>
+<br>
+
+## readthedown
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::readthedown 
+---
+```
+
+![22](ejemplos/trmd22.png)
+<br>
+<br>
+
+## material
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::material
+---
+```
+
+![23](ejemplos/trmd23.png)
+<br>
+<br>
+
+## robobook
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::robobook
+---
+```
+
+![24](ejemplos/trmd24.png)
+<br>
+<br>
+
+## downcute
+
+
+El paquete para este tema es *rmdformats*
+
+```
+install.packages("rmdformats")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: rmdformats::downcute
+---
+```
+
+![25](ejemplos/trmd25.png)
+<br>
+<br>
+
+![26](ejemplos/trmd26.png)
+<br>
+<br>
+
+## tint
+
+
+El paquete para este tema es *tint*
+
+```
+install.packages("tint")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: tint::tintHtml
+---
+```
+
+![27](ejemplos/trmd27.png)
+<br>
+<br>
+
+## tufte_html
+
+
+El paquete para este tema es *tufte*
+
+```
+install.packages("tufte")
+```
+
+```
+---
+title: "Rmd ejemplo"
+author: "Luis Andrés Rojas García Exp. 279465"
+date: "2022-09-27"
+output: tufte::tufte_html
+---
+```
+
+![28](ejemplos/trmd28.png)
+<br>
+<br>
