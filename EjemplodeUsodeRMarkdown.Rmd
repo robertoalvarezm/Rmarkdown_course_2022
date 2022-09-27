@@ -209,6 +209,10 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </div>
 </p>
 
+
+![](https://youtu.be/zNzZ1PfUDNk)
+
+
 # Ecuaciones
 
 Para agregar ecuaciones al documento se utiliza la misma sintaxis que en $\LaTeX$, por medio del símbolo $ o $$. Si la ecuación se encuentra entre un par de $, entonces la ecuación se escribe en línea, por ejemplo:
@@ -774,8 +778,8 @@ Para este curso nos quedaremos con la opción **html_document**.
 
 Vamos a empezar a agregar distintos componentes. nos podemos guiar de la lista de opciones que tienen para cada formato:
 
-```{r, echo=FALSE, results="asis", fig.show='hold', out.width='25%', fig.align='center'}
-# knitr::include_graphics("picture/Figura1.jpeg")
+```{r, echo=FALSE, results="asis", fig.show='hold', out.width='75%', fig.align='center'}
+#knitr::include_graphics("picture/Figura1.jpeg")
 ```
 
 ## Agregar un subtítulo  
