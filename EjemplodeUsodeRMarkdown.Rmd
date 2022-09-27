@@ -201,6 +201,12 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 ```
 
 
+```{r}
+library("vembedr")
+embed_url("https://www.youtube.com/embed/tgbNymZ7vqY")
+```
+
+
 <div>
 <p style = 'text-align:center;'>
 <iframe width="600" height = "420"
@@ -212,6 +218,11 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
 ![](https://youtu.be/zNzZ1PfUDNk)
 
+![](https://www.youtube.com/watch?v=zNzZ1PfUDNk)
+
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zNzZ1PfUDNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div>
 
 # Ecuaciones
 
@@ -272,7 +283,105 @@ p<-ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 
 ggplotly(p)
 ```
-  
+
+
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+data('palmerpenguins')
+
+mass_flipper <- ggplot(data = penguins, 
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot")
+
+mass_flipper
+
+```
+En su versión interactiva
+
+```{r}
+ggplotly(mass_flipper)
+```
+
+## Tablas interactivas   
+
+
+Podemos utilizar la librería `DT` para generar tablas interactivas
+
+```{r}
+library(tidyverse)
+tabla<-penguins %>% 
+  group_by(species) %>% 
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+```
+
+
+```{r}
+library(DT)
+datatable(tabla)
+```
+
+```{r}
+library(networkD3) # Generar redes con D3
+
+# Guardamos bases de ejemplo 
+MisLinks <- networkD3::MisLinks
+MisNodes <- networkD3::MisNodes 
+
+# Exploramos datos 
+head(MisLinks)
+
+# Realizar la visualización.
+forceNetwork(Links = MisLinks, 
+             Nodes = MisNodes,
+             Source = "source", 
+             Target = "target", 
+             Value = "value", 
+             NodeID = "name", 
+             Nodesize = "size",
+             Group = "group", 
+             opacity = 0.8,
+             width = 600, 
+             height = 600, 
+             fontSize = 15)
+```
+
+ ## Como ligar `igraph` con `network3D`
+ 
+```{r}
+# Load igraph
+library(igraph)
+
+# Use igraph to make the graph and find membership
+karate <- make_graph("Zachary")
+wc <- cluster_walktrap(karate)
+members <- membership(wc)
+
+# Convert to object suitable for networkD3
+karate_d3 <- igraph_to_networkD3(karate, group = members)
+
+# Create force directed network plot
+forceNetwork(Links = karate_d3$links, Nodes = karate_d3$nodes, 
+             Source = 'source', Target = 'target', 
+             NodeID = 'name', Group = 'group')
+```
+
 ### Combinar dos gráficas con un control
 
 #### No correr si no tienen o quieren instalar estas librerías
@@ -778,9 +887,14 @@ Para este curso nos quedaremos con la opción **html_document**.
 
 Vamos a empezar a agregar distintos componentes. nos podemos guiar de la lista de opciones que tienen para cada formato:
 
-```{r, echo=FALSE, results="asis", fig.show='hold', out.width='75%', fig.align='center'}
-#knitr::include_graphics("picture/Figura1.jpeg")
+```{r fig.align='center', fig.show='hold', include=FALSE, out.width='75%', results="asis"}
+knitr::include_graphics("picture/Figura1.jpeg")
 ```
+
+
+
+
+
 
 ## Agregar un subtítulo  
 Además de la opción `title` esta la opción `subtitle`. Pongamos en nuestro ejemplo lo siguiente:  
