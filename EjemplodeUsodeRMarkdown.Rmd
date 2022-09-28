@@ -19,6 +19,8 @@ output:
 bibliography: biblio.bib
 #csl: nature.csl
 runtime: shiny
+#output: flexdashboard::flex_dashboard
+
 
 ---
 ```{r setup, include=FALSE}
@@ -201,10 +203,6 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 ```
 
 
-```{r}
-library("vembedr")
-embed_url("https://www.youtube.com/embed/tgbNymZ7vqY")
-```
 
 
 <div>
@@ -216,9 +214,6 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </p>
 
 
-![](https://youtu.be/zNzZ1PfUDNk)
-
-![](https://www.youtube.com/watch?v=zNzZ1PfUDNk)
 
 <div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zNzZ1PfUDNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -382,6 +377,55 @@ forceNetwork(Links = karate_d3$links, Nodes = karate_d3$nodes,
              NodeID = 'name', Group = 'group')
 ```
 
+
+## Shiny
+
+
+```{r global, include=FALSE}
+# load data in 'global' chunk so it can be shared
+# by all users of the dashboard
+library(datasets)
+library(shiny)
+data(faithful)
+```
+
+Column {.sidebar}
+--------------------------------------------------
+
+Waiting time between eruptions and the duration of the eruption
+for the Old Faithful geyser in Yellowstone National Park,
+Wyoming, USA.
+
+```{r}
+selectInput(
+  "n_breaks", label = "Number of bins:",
+  choices = c(10, 20, 35, 50), selected = 20
+)
+
+sliderInput(
+  "bw_adjust", label = "Bandwidth adjustment:",
+  min = 0.2, max = 2, value = 1, step = 0.2
+)
+```
+
+Column
+--------------------------------------------------
+
+### Geyser Eruption Duration
+
+```{r}
+renderPlot({
+  erpt = faithful$eruptions
+  hist(
+    erpt, probability = TRUE, breaks = as.integer(input$n_breaks),
+    xlab = "Duration (minutes)", main = "Geyser Eruption Duration",
+    col = 'gray', border = 'white'
+  )
+  
+  dens = density(erpt, adjust = input$bw_adjust)
+  lines(dens, col = "blue", lwd = 2)
+})
+```
 ### Combinar dos gráficas con un control
 
 #### No correr si no tienen o quieren instalar estas librerías
