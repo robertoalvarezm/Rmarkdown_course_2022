@@ -240,6 +240,10 @@ Las ecuaciones diferenciales que definen el modelo de presas y depredadores cono
 
  Las ecuaciones diferenciales que definen el modelo de presas y depredadores conocido como Lotka-Volterra son $$\dot x = ax -bxy$$ y $$\dot y = -cy +dxy$$. En este caso las ecuaciones quedarán en una distinta línea que el texto.
 
+## Elementos interactivos en RMarkdown
+
+
+
 ## Gráficos interactivos en RMarkdown
 
 Podemos usar la librería de `plotly` para tener gráficos interactivos en la salida de html
@@ -426,6 +430,46 @@ renderPlot({
   lines(dens, col = "blue", lwd = 2)
 })
 ```
+
+## Reactable 
+```{r}
+library(dplyr)
+library(sparkline)
+library(reactable)
+
+data <- chickwts %>%
+  group_by(feed) %>%
+  summarise(weight = list(weight)) %>%
+  mutate(boxplot = NA, sparkline = NA)
+
+reactable(data, columns = list(
+  weight = colDef(cell = function(values) {
+    sparkline(values, type = "bar", chartRangeMin = 0, chartRangeMax = max(chickwts$weight))
+  }),
+  boxplot = colDef(cell = function(value, index) {
+    sparkline(data$weight[[index]], type = "box")
+  }),
+  sparkline = colDef(cell = function(value, index) {
+    sparkline(data$weight[[index]])
+  })
+))
+```
+
+##Leaflet
+
+```{r}
+library(leaflet)
+library("mxmaps")
+
+df_mxstate_2020$value <-  df_mxstate_2020$indigenous_language / 
+  df_mxstate_2020$pop * 100
+mxstate_choropleth(df_mxstate_2020, 
+                   num_colors = 1,
+                   title = "Percentage of the population that speaks\nan indigenous language",
+                   legend = "%")
+```
+
+
 ### Combinar dos gráficas con un control
 
 #### No correr si no tienen o quieren instalar estas librerías
