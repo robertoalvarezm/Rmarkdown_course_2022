@@ -16,12 +16,15 @@ output:
     toc: yes
   word_document:
     toc: yes
+  html_notebook: 
+    number_sections: yes
+    toc: yes
 bibliography: biblio.bib
 #csl: nature.csl
-runtime: shiny
+#runtime: shiny
 #output: flexdashboard::flex_dashboard
-
-
+editor_options: 
+  chunk_output_type: inline
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
